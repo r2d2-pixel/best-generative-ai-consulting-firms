@@ -4,25 +4,25 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const SITE = {
-  name:          'TODO: Site Name',
-  domain:        'TODO: yourdomain.com',
-  url:           'https://TODO.yourdomain.com',
-  tagline:       'TODO: Independent reviews of [Niche]',
-  description:   'TODO: Site meta description for search engines.',
+  name:          'Best Generative AI Consulting Firms',
+  domain:        'best-generative-ai-consulting-firms.com',
+  url:           'https://best-generative-ai-consulting-firms.com',
+  tagline:       'Independent reviews of the best generative AI consulting firms',
+  description:   'Ranked, independently researched reviews of the best generative AI consulting firms for strategy, readiness assessment, and implementation.',
   locale:        'en_US',
   twitterHandle: '',        // e.g. '@yourhandle' — leave empty to omit OG tag
 };
 
 export const NICHE = {
-  label:          'TODO: Niche Label',    // e.g. "AI Agent Development" — used in headings and meta
-  providerLabel:  'company',              // singular: "company" or "agency" or "tool"
-  providersLabel: 'companies',            // plural
-  verticalSlug:   'TODO-niche-slug',      // used in URL slugs, e.g. "ai-agent-development"
+  label:          'Generative AI Consulting',
+  providerLabel:  'firm',
+  providersLabel: 'firms',
+  verticalSlug:   'generative-ai-consulting',
 };
 
 export const BRANDING = {
-  primaryColor: '#1e40af',  // tailwind brand-600; update tailwind.config.mjs too
-  logoText:     'TODO: Site Name',
+  primaryColor: '#e11d48',  // tailwind brand-600; update tailwind.config.mjs too
+  logoText:     'Best Generative AI Consulting Firms',
   logoPath:     '/logos/site-logo.svg',   // place file in public/logos/
 };
 

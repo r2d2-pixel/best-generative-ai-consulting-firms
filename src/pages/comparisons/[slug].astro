@@ -50,23 +50,20 @@ const related = allComparisons.filter(c =>
   (c.slug1 === slug1 || c.slug2 === slug1 || c.slug1 === slug2 || c.slug2 === slug2)
 ).slice(0, 6);
 
-// TODO: Update capability keys + checks to match your niche's service categories.
-// Keys must match the badge/use-case values in your companies.ts data.
 function hasCap(company: Company, cap: string): string {
   const checks: Record<string, (c: Company) => boolean> = {
-    'Custom build': c => c.badges.some(b => b.toLowerCase().includes('custom')),
-    'Consulting': c => c.badges.some(b => b.toLowerCase().includes('consult')) || c.useCases.some(u => u.toLowerCase().includes('consult') || u.toLowerCase().includes('strateg')),
-    'Integration': c => c.badges.some(b => b.toLowerCase().includes('integr')),
-    'Staff augmentation': c => c.badges.some(b => b.toLowerCase().includes('staff')),
+    'AI strategy consulting': c => c.badges.includes('ai-consulting'),
+    'Generative AI': c => c.badges.includes('generative-ai'),
+    'Machine learning': c => c.badges.includes('machine-learning'),
+    'Data engineering': c => c.badges.includes('data-engineering'),
+    'MLOps': c => c.badges.includes('mlops'),
     'Fixed-price projects': c => c.engagementModels.some(m => m.toLowerCase().includes('fixed')),
     'Dedicated team model': c => c.engagementModels.some(m => m.toLowerCase().includes('dedicated')),
   };
   return checks[cap]?.(company) ? '✓' : '✗';
 }
 
-// TODO: Replace this list with technologies/tools relevant to your niche.
-// These appear in the tech stack comparison table on every comparison page.
-const allTech = ['TODO: Tool 1', 'TODO: Tool 2', 'TODO: Tool 3', 'TODO: Tool 4', 'TODO: Tool 5'];
+const allTech = ['Python', 'AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'LangChain', 'PyTorch'];
 
 function hasTech(company: Company, tech: string): string {
   return company.techStack.some(t => t.toLowerCase().includes(tech.toLowerCase())) ? '✓' : 'N/A';
@@ -77,14 +74,13 @@ const winner = c1.rating >= c2.rating ? c1 : c2;
 const runner = winner.slug === c1.slug ? c2 : c1;
 
 // Use-case table data — derived in frontmatter to avoid ?? in JSX
-// TODO: Replace with use cases specific to your niche
 const useCaseRows = [
   c1.useCases[0] || 'Use case 1',
   c1.useCases[1] || 'Use case 2',
   c2.useCases[0] || 'Use case 3',
   c2.useCases[1] || 'Use case 4',
-  'Fixed-price build',
-  'Staff augmentation',
+  'Fixed-price project',
+  'Dedicated team model',
 ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 6);
 
 // Decision matrix — precomputed in frontmatter to keep JSX free of complex regex + ternary combinations
@@ -205,7 +201,7 @@ const decisionRows: [string, string][] = [
             </tr>
           </thead>
           <tbody>
-            {['Custom build', 'Consulting', 'Integration', 'Staff augmentation', 'Fixed-price projects', 'Dedicated team model'].map((cap, i) => (
+            {['AI strategy consulting', 'Generative AI', 'Machine learning', 'Data engineering', 'MLOps', 'Fixed-price projects', 'Dedicated team model'].map((cap, i) => (
               <tr class={`border-b border-slate-100 ${i % 2 === 1 ? 'bg-slate-50/40' : ''}`}>
                 <td class="px-4 py-3 font-medium text-slate-700">{cap}</td>
                 <td class={`px-4 py-3 font-semibold ${hasCap(c1, cap) === '✓' ? 'text-green-600' : 'text-red-400'}`}>{hasCap(c1, cap)}</td>
