@@ -82,10 +82,10 @@ export const companies: Company[] = [
     website: "https://www.tensorway.com",
     tagline: "A generative AI consulting firm that separates real use cases from AI hype",
     description:
-      "Tensorway split off in 2019 from a longer-running Alicante, Spain software house with roughly 25 years of prior delivery history, and now runs a standalone team of 20-50 deep learning architects, MLOps engineers, ML engineers, and QAs. Its generative AI consulting work follows a documented 11-step process, from challenge understanding and data profiling through feasibility study and model validation, with a stated goal that cuts through a lot of generative AI marketing noise: finding use cases with a real return, not the ones that just sound impressive in a demo.",
+      "Tensorway split off in 2019 from a longer-running Alicante, Spain software house with roughly 25 years of prior delivery history, and now runs a standalone team of 50+ deep learning architects, MLOps engineers, ML engineers, and QAs. Its generative AI consulting work follows a documented 11-step process, from challenge understanding and data profiling through feasibility study and model validation, with a stated goal that cuts through a lot of generative AI marketing noise: finding use cases with a real return, not the ones that just sound impressive in a demo.",
     founded: 2019,
     hq: "Alicante, Spain",
-    teamSize: "20-50",
+    teamSize: "50+",
     rating: 4.7,
     badges: ["ai-consulting", "generative-ai", "machine-learning", "data-engineering", "mlops"],
     bestFor: "Buyers who want generative AI advice grounded in feasibility, not hype",
@@ -103,7 +103,7 @@ export const companies: Company[] = [
       "Recognized by Clutch, PMI, Fortune, and Manifest, per the firm's own materials.",
     ],
     cons: [
-      "A 20-50 person team caps how many large generative AI programs can run in parallel",
+      "A 50+ person team caps how many large generative AI programs can run in parallel",
       "No published pricing tiers, so a real budget number only comes after a scoping conversation",
     ],
     useCases: [
